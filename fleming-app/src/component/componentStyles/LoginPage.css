@@ -7,7 +7,7 @@
 }
 
 .login-form {
-  background-color: white;
+  /* background-color: white; */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -39,9 +39,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: darkblue;
-} 
+
 
 
 .login-container {
@@ -78,7 +76,7 @@ input[type='password'] {
   width: calc(100% - 16px); /* Adjusted width */
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 button {

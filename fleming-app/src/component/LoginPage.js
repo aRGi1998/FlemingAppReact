@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './componentStyles/LoginPage.css';
-
+import emailIcon from '../assests/Message_alt_fill.png'
+import logo from '../assests/logo.png';
 
 function LoginPage() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+    setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -18,28 +19,31 @@ function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Username:', username);
+    console.log('email:', email);
     console.log('Password:', password);
   };
 
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
-        <h2>Login To Your Account</h2>
+        <img src={logo} alt="logo"  />
+        <h2 style={{ color: 'white' }}>Login To Your Account</h2>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          {/* <img src={emailIcon} alt="Email Icon" className="input-icon" /> */}
           <input
             type="text"
-            id="username"
-            value={username}
+            id="email"
+            placeholder='Email'
+            value={email}
             onChange={handleUsernameChange}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          {/* <img src="/path/to/password-icon.png" alt="Password Icon" className="input-icon" /> */}
           <input
             type="password"
             id="password"
+            placeholder='Password'
             value={password}
             onChange={handlePasswordChange}
           />
@@ -55,4 +59,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
