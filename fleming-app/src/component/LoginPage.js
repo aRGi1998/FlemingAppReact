@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './componentStyles/LoginPage.css';
-import emailIcon from '../assests/Message_alt_fill.png'
 import logo from '../assests/logo.png';
+import './componentStyles/RegisterPage.css';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -24,12 +24,13 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
+    <div className="wrapper">
+    <div className="background-image"></div>
+    <div className="gradient"></div>
+      <form onSubmit={handleSubmit} className="register-form">
+          <h2 style={{ color: 'white' }}>Login To Your Account</h2>
         <img src={logo} alt="logo"  />
-        <h2 style={{ color: 'white' }}>Login To Your Account</h2>
         <div className="form-group">
-          {/* <img src={emailIcon} alt="Email Icon" className="input-icon" /> */}
           <input
             type="text"
             id="email"
@@ -50,7 +51,7 @@ function LoginPage() {
         </div>
         <button className="btn btn-primary btn-lg" type="submit"><a href="/home">Login</a></button>
         <div className="additional-links">
-          <span>Don't have an account?<a href="/register">Register</a></span> <br></br>
+          <span className="mb-5" style={{color:'white'}}>Don't have an account?<a href="/register">Register</a></span> <br></br>
           <a href="/forgot-password">Forgotten Password?</a>
         </div>
       </form>
