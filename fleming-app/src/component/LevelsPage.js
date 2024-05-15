@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './componentStyles/LevelsPage.css'; // Import CSS file for styling
 import lock from '../assests/lock.png';
@@ -6,6 +6,14 @@ import logo from '../assests/logo.png';
 
 const LevelsPage = () => {
     const navigate = useNavigate();
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        const isAdminLocalStorage = localStorage.getItem('isAdmin');
+        if (isAdminLocalStorage === 'true') {
+            setIsAdmin(true);
+        }
+    }, []);
 
     const navigateToFirstLevel = (buttonId) => {
         navigate('/first-level', { state: { buttonId } }); // Pass buttonId in state object

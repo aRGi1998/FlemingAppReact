@@ -19,10 +19,6 @@ const HomePage = () => {
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
-          {/* <div className="home-level">
-            <span>Home</span> |
-            <span className="level-heading">Levels</span>
-          </div> */}
         </div>
         <div className="task-header">
           <span className='home-level'> Hello </span>

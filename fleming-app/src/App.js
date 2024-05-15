@@ -10,11 +10,12 @@ import CompletedPage from './component/CompletedPage';
 import RegisterPage from './component/RegisterPage';
 import ForgotPasswordPage from './component/ForgetPasswordPage';
 import OtpVerificationPage from './component/OtpVerificationPage';
-
+import RegistrationForm from './component/FlemmingRegisterPage';
 const App = () => {
   return (
     <Router>
       <Routes>
+      <Route path="/test" element={<RegistrationForm />} />
         <Route path="/" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/levels" element={<LevelsPage />} />

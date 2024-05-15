@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './componentStyles/RegisterPage.css';
 import logo from '../assests/logo.png';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        contact_number: '',
+        password: '',
+        campus: ''
+    });
+
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [campus, setCampus] = useState('');
+    const navigate = useNavigate();
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
     }
@@ -27,18 +38,50 @@ function RegisterPage() {
         setCampus(e.target.value);
     }
 
+    // const handleSubmit = async e => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const response = await axios.post('https://api-flrming.dhoomaworksbench.site/api/student/', {
+
+    //                 password: password,
+    //                 email: email,
+    //                 contact_number: phoneNumber,
+    //                 student_code: "null"
+    //         });
+
+    //         console.log('Registration successful:', response.data);
+    //         // Add any necessary logic for successful registration
+    //     } catch (error) {
+    //         console.error('Registration failed:', error);
+    //         // Handle registration error
+    //     }
+    // };
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log('Email:', email);
-        // console.log('Password:', password);
-        // console.log('Confirm Password:', confirmPassword);
+        // Sending the form data as JSON string
+        axios.post('https://api-flrming.dhoomaworksbench.site/api/student/', {
+            password: password,
+            email: email,
+            contact_number: phoneNumber,
+            student_code: "null"
+        })
+            .then(res => {
+                console.log(res.data)
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error, 'error');
+            });
     };
 
     return (
         <div className="wrapper">
             <div className="background-image"></div>
             <div className="gradient"></div>
-            <form onSubmit={handleSubmit} className="register-form">
+            <form className="register-form">
                 <img className="register-logo" src={logo} alt="logo" />
                 <div className="form-group">
                     <input
@@ -91,7 +134,7 @@ function RegisterPage() {
                         onChange={handleCampusChange}
                     />
                 </div>
-                <button className="btn btn-primary btn-lg" type="submit">SUBMIT</button>
+                <button onClick={handleSubmit} className="btn btn-primary btn-lg" type="submit">SUBMIT</button>
             </form>
         </div>
     );
