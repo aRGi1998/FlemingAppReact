@@ -11,6 +11,8 @@ import RegisterPage from './component/RegisterPage';
 import ForgotPasswordPage from './component/ForgetPasswordPage';
 import OtpVerificationPage from './component/OtpVerificationPage';
 import RegistrationForm from './component/FlemmingRegisterPage';
+import GameListPage from './component/GameListPage';
+
 const App = () => {
   return (
     <Router>
@@ -26,6 +28,7 @@ const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
         <Route path="/otp" element={<OtpVerificationPage/>} />
+        <Route path="/game-list" element={<GameListPage/>} />
       </Routes>
     </Router>
   );
