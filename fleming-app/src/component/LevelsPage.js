@@ -202,9 +202,18 @@ function LevelsPage() {
     };
 
     const navigateToTask = (task) => {
-        console.log('Navigating to task:', task);
         console.log('Task ID:', task);
+        const url = `https://api-flrming.dhoomaworksbench.site/user-game-list?game_type= ${task}`;
+        console.log(url,'ooooo')
+        const token = localStorage.getItem('accessToken');
         // Implement navigation logic here
+        // axios.get(url, {
+        //     headers: {
+        //         Authorization: `Bearer ${token}}`
+        //     }
+        // }).then(response => {
+        //         console.log(response, 'response')
+        //     })
     };
 
     // Define an array of colors for the tasks

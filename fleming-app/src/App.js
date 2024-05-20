@@ -12,7 +12,8 @@ import ForgotPasswordPage from './component/ForgetPasswordPage';
 import OtpVerificationPage from './component/OtpVerificationPage';
 import RegistrationForm from './component/FlemmingRegisterPage';
 import GameListPage from './component/GameListPage';
-
+import StatusPage from './component/StatusPage';
+import HintsPage from './component/HintsPage';
 const App = () => {
   return (
     <Router>
@@ -29,6 +30,8 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
         <Route path="/otp" element={<OtpVerificationPage/>} />
         <Route path="/game-list" element={<GameListPage/>} />
+        <Route path="/hint" element={<HintsPage/>} />
+        <Route path="/status" element={<StatusPage/>} />
       </Routes>
     </Router>
   );

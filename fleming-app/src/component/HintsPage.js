@@ -3,7 +3,7 @@ import './componentStyles/LevelsPage.css';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assests/logo.png';
 
-const StatusPage = () => {
+const HintsPage = () => {
     const savedName = sessionStorage.getItem('userName');
     const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const StatusPage = () => {
             <div className="levels-page mt-5">
                 <div className="container mt-5 d-flex justify-content-center">
                     <div className="text-center">
-                        <h2 className="mb-4">Your Current Level</h2>
+                        <h2 className="mb-4">Hints List</h2>
                         <ol className="list-group list-group-numbered">
                             <li className="list-group-item">Hint 1: This is the first hint.</li>
                             <li className="list-group-item">Hint 2: This is the second hint.</li>
@@ -46,4 +46,4 @@ const StatusPage = () => {
     );
 };
 
-export default StatusPage;
+export default HintsPage;

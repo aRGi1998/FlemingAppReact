@@ -63,6 +63,7 @@ function RegisterPage() {
         e.preventDefault();
         // Sending the form data as JSON string
         axios.post('https://api-flrming.dhoomaworksbench.site/api/student/', {
+            username: username,
             password: password,
             email: email,
             contact_number: phoneNumber,

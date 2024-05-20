@@ -46,10 +46,11 @@ function LoginPage() {
     })
       .then(res => {
         const access = res.data.access;
+        const name =  res.data.name;
         console.log(res.data.access, 'ooo')
         // Store access token in local storage or context
         localStorage.setItem('accessToken', access);
-        localStorage.setItem('isAdmin', 'false');
+        sessionStorage.setItem('userName', name);
         // Redirect to home page
         navigate('/home');
       })
