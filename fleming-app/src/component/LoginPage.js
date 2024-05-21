@@ -16,14 +16,14 @@ function LoginPage() {
 
   const handleUsernameChange = (e) => {
     setEmail(e.target.value);
-    setEmailError(''); // Clear email error when user starts typing
-    setApiError(''); // Clear API error when user starts typing
+    setEmailError(''); 
+    setApiError(''); 
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    setPasswordError(''); // Clear password error when user starts typing
-    setApiError(''); // Clear API error when user starts typing
+    setPasswordError(''); 
+    setApiError('');
   };
 
   const handleSubmit = (e) => {
@@ -49,7 +49,7 @@ function LoginPage() {
         const name =  res.data.name;
         console.log(res.data.access, 'ooo')
         // Store access token in local storage or context
-        localStorage.setItem('accessToken', access);
+        sessionStorage.setItem('accessToken', access);
         sessionStorage.setItem('userName', name);
         // Redirect to home page
         navigate('/home');
@@ -98,10 +98,6 @@ function LoginPage() {
         <div style={{ marginBottom: '25px' }}> {/* Add some margin between buttons */}
           <button className="btn btn-primary btn-lg" type="submit">Login</button>
         </div>
-        {/* <div>
-          <button className="btn btn-primary btn-lg" onClick={handleAdminLogin}>Login as Admin</button>
-        </div> */}
-
         <div className="additional-links mt-5">
           <span className="mb-5" style={{ color: 'white' }}>Don't have an account? <a href="/register" style={{ textDecoration: 'underline', color: 'white' }}>Register</a></span> <br></br>
           <a style={{ textDecoration: 'underline', color: 'white' }} href="/forgot-password">Forgotten Password?</a>
