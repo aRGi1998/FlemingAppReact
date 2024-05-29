@@ -26,6 +26,44 @@ function LoginPage() {
     setApiError('');
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   if (email.trim() === '') {
+  //     setEmailError('Please enter your email.');
+  //     return;
+  //   }
+
+  //   if (password.trim() === '') {
+  //     setPasswordError('Please enter your password.');
+  //     return;
+  //   }
+
+  //   // Sending the form data as JSON string
+  //   axios.post('https://api-flrming.dhoomaworksbench.site/api/student/user-login/', {
+  //     password: password,
+  //     email: email,
+  //   })
+  //     .then(res => {
+  //       const { access, name, status } = res.data;
+  //       if (status) {
+  //         // Store access token and name in session storage
+  //         sessionStorage.setItem('accessToken', access);
+  //         sessionStorage.setItem('userName', name);
+  //         // Redirect to home page
+  //         navigate('/home');
+  //       } else {
+  //         // Handle error when status is false
+  //         setApiError('Invalid email or password.');
+  //       }
+  //     })
+  //     .catch(error => {
+  //       // Display API error message
+  //       setApiError('Invalid email or password.');
+  //       console.log(error, 'error');
+  //     });
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -45,13 +83,19 @@ function LoginPage() {
       email: email,
     })
       .then(res => {
-        const { access, name, status } = res.data;
+        const { access, name, status, is_staff } = res.data;
         if (status) {
-          // Store access token and name in session storage
+          // Store access token, name, and is_staff in session storage
           sessionStorage.setItem('accessToken', access);
           sessionStorage.setItem('userName', name);
-          // Redirect to home page
-          navigate('/home');
+          sessionStorage.setItem('isStaff', is_staff.toString()); // Store as string 'true' or 'false'
+
+          // Redirect based on is_staff value
+          if (is_staff) {
+            navigate('/admin-home');
+          } else {
+            navigate('/home');
+          }
         } else {
           // Handle error when status is false
           setApiError('Invalid email or password.');
@@ -63,7 +107,6 @@ function LoginPage() {
         console.log(error, 'error');
       });
   };
-
 
   return (
     <div className="wrapper">

@@ -68,8 +68,7 @@ const FirstLevelPage = () => {
       <div className="levels-page mt-5">
         <div className="container oval-container mt-5">
           {/* TASK 1 Container Start Here  */}
-          {buttonId === "TASK 1" && (
-            <div>
+          <div>
               <form>
               <h3>Question: LEVEL 1</h3>
               <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
@@ -120,7 +119,56 @@ const FirstLevelPage = () => {
               </div> */}
               </form>
             </div>
-          )}
+          {/* {buttonId === "TASK 1" && (
+            <div>
+              <form>
+              <h3>Question: LEVEL 1</h3>
+              <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
+                <div className="rounded-button" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#1ABC9C', borderRadius: '20px', padding: '10px' }}>
+                  <input type="radio" name="options" value="A" style={{ marginRight: '5px' }} onChange={handleRadioChange} />
+                  A
+                </div>
+                <div className="span" style={{ marginLeft: '10px' }}>
+                  <span>Text</span>
+                </div>
+              </div>
+              <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
+                <div className="rounded-button" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#1ABC9C', borderRadius: '20px', padding: '10px' }}>
+                  <input type="radio" name="options" value="B" style={{ marginRight: '5px' }} onChange={handleRadioChange} />
+                  B
+                </div>
+                <div className="span" style={{ marginLeft: '10px' }}>
+                  <span>Text</span>
+                </div>
+              </div>
+              <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
+                <div className="rounded-button" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#1ABC9C', borderRadius: '20px', padding: '10px' }}>
+                  <input type="radio" name="options" value="C" style={{ marginRight: '5px' }} onChange={handleRadioChange} />
+                  C
+                </div>
+                <div className="span" style={{ marginLeft: '10px' }}>
+                  <span>Text</span>
+                </div>
+              </div>
+              <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
+                <div className="rounded-button" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#1ABC9C', borderRadius: '20px', padding: '10px' }}>
+                  <input type="radio" name="options" value="D" style={{ marginRight: '5px' }} onChange={handleRadioChange} />
+                  D
+                </div>
+                <div className="span" style={{ marginLeft: '10px' }}>
+                  <span>Text</span>
+                </div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                {isEditable ? (
+                  <button onClick={handleUpdate} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Update</button>
+                ) : (
+                  <button onClick={handleSubmit} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Check Your Answer</button>
+                )}
+              </div>
+              </form>
+            </div>
+          )} */}
           {/* TASK 2 Container  Start Here  */}
           {buttonId === "TASK 2" && (
             <div>

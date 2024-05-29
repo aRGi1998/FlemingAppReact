@@ -44,6 +44,17 @@ const ThirdLevelPage = () => {
             {/* QR Code Section Start Here!  */}
             <div className="levels-page mt-5">
                 <div className="container oval-container mt-5">
+                    <>
+                        <h1 className="scan-header">SCAN ME</h1>
+                        <QrReader
+                            delay={500}
+                            onError={handleError}
+                            onScan={handleScan}
+                            style={{ width: '100%' }}
+                        />
+                        <p>{qrResult}</p>
+                        <p className="scan-header">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    </>
                     {/* TASK 7 Container Start Here  */}
                     {buttonId === "TASK 7" && (
                         <>

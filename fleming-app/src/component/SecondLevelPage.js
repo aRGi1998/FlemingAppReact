@@ -33,6 +33,21 @@ const SecondLevelPage = () => {
             {/* SecondLevel Section start Here  */}
             <div className="levels-page mt-5">
                 <div className="container oval-container mt-5">
+
+                    <div>
+                        <p>Please upload your file containing the answer.</p>
+                        <p>Instructions:</p>
+                        <ul>
+                            <li>Make sure your file format is compatible.</li>
+                            <li>Ensure your answer is clear and concise.</li>
+                        </ul>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                        <input type="file" accept=".txt,.pdf" /> {/* File upload input */}
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                        <button onClick={handleSubmit} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Submit File</button>
+                    </div>
                     {/* TASK 4 Container start Here  */}
                     {buttonId === "TASK 4" && (
                         <div>
@@ -79,11 +94,11 @@ const SecondLevelPage = () => {
                         </div>
                     )}
                 </div>
-            </div>
+            </div >
             {/* Footer Section Start Here! */}
-            <div className="footer">
+            < div className="footer" >
                 <h3 className="footer-heading">Copy@ 2024 fleming.ca, All Right Reserved</h3>
-            </div>
+            </div >
         </>
     );
 };

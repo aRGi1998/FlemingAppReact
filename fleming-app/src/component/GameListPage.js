@@ -4,11 +4,13 @@ import axios from 'axios';
 import './componentStyles/LevelsPage.css';
 import logo from '../assests/logo.png';
 import lock from '../assests/lock.png';
+import { useNavigate } from 'react-router-dom';
 
 const GameListPage = () => {
 
     const [gameData, setGameData] = useState([]);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         getGameList();
@@ -35,6 +37,17 @@ const GameListPage = () => {
                 setError('Failed to fetch game data.');
             });
     };
+
+    const navigateToFirstLevel = (buttonId) => {
+        console.log(taskId, 'id');
+        if (taskId === '2') {
+            navigate('/second-level');
+        } else if (taskId === '3') {
+            navigate('/third-level');
+        } else {
+            navigate('/first-level', { state: { buttonId } }); // Pass buttonId in state object
+        }
+    };
     const taskColors = [
         'rgb(19, 203, 28)',
         'rgb(16, 241, 94)',
@@ -47,7 +60,7 @@ const GameListPage = () => {
         'rgb(156, 11, 98)',
         'rgb(255, 15, 15)'
     ];
-    
+
     return (
         <>
             {/* Header Section Start Here! */}
@@ -67,7 +80,7 @@ const GameListPage = () => {
                 {error && <div className="error-message" style={{ color: 'white' }}>{error}</div>}
                 <div className="container oval-container mt-5" >
                     {gameData.map((game, index) => (
-                        <div key={game.id} id={`task-${game.id}`} className="oval-button mb-3" style={{ backgroundColor: taskColors[index % taskColors.length] }}>
+                        <div key={game.id} id={`task-${game.id}`} className="oval-button mb-3" style={{ backgroundColor: taskColors[index % taskColors.length] }} onClick={() => navigateToFirstLevel()}>
                             <div className="left-side">*</div>
                             <span style={{ cursor: 'pointer' }}>{game.tittle}</span>
                             <div className="right-side">
