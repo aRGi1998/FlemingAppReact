@@ -40,11 +40,11 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
-            <button className="round-button" style={{ width: '100px', height: '100px', backgroundColor: 'white', padding: '10px', border: 'none', cursor: 'pointer', marginRight: '10px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+            {/* <button className="round-button" style={{ width: '100px', height: '100px', backgroundColor: 'white', padding: '10px', border: 'none', cursor: 'pointer', marginRight: '10px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img src={frame} alt="Left Image" style={{ width: '50px', height: '50px', marginBottom: '5px' }} />
               <span style={{ color: 'black', textAlign: 'center' }}><a  style={{ color: 'black', textAlign: 'center' }} href="/hint">Hint</a></span>
-            </button>
+            </button> */}
             <button className="square-button" style={{ width: '100px', height: '100px', backgroundColor: 'white', padding: '10px', border: 'none', cursor: 'pointer', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img src={frametrophy} alt="Right Image" style={{ width: '50px', height: '50px', marginBottom: '5px' }} />
               <span style={{ color: 'black', textAlign: 'center' }}> <a  style={{ color: 'black', textAlign: 'center' }} href="/status">Status</a></span>

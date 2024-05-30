@@ -33,11 +33,11 @@ const StatusPage = () => {
                     <div className="text-center">
                         <h2 className="mb-4">Your Current Level</h2>
                         <ol className="list-group list-group-numbered">
-                            <li className="list-group-item">Hint 1: This is the first hint.</li>
-                            <li className="list-group-item">Hint 2: This is the second hint.</li>
+                            <li className="list-group-item">Nice going! You're now at Level 4, Game 3. Keep up the awesome work!</li>
+                            {/* <li className="list-group-item">Hint 2: This is the second hint.</li>
                             <li className="list-group-item">Hint 3: This is the third hint.</li>
                             <li className="list-group-item">Hint 4: This is the fourth hint.</li>
-                            <li className="list-group-item">Hint 5: This is the fifth hint.</li>
+                            <li className="list-group-item">Hint 5: This is the fifth hint.</li> */}
                         </ol>
                         <button className="btn btn-primary mt-4" onClick={handleSubmit}>Back to Home</button>
                     </div>

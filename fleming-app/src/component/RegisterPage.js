@@ -189,24 +189,24 @@ function RegisterPage() {
             contact_number: phoneNumber,
             student_code: "null"
         })
-        .then(res => {
-            console.log(res.data)
-            navigate('/');
-        })
-        .catch(error => {
-            if (error.response && error.response.data) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
-                console.log(error.response.data);
-                setErrors(error.response.data); // Set errors state
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.log(error.request);
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log('Error', error.message);
-            }
-        });
+            .then(res => {
+                console.log(res.data)
+                navigate('/');
+            })
+            .catch(error => {
+                if (error.response && error.response.data) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.log(error.response.data);
+                    setErrors(error.response.data); // Set errors state
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+            });
     };
 
     return (
@@ -215,7 +215,7 @@ function RegisterPage() {
             <div className="gradient"></div>
             <form className="register-form">
                 <img className="register-logo" src={logo} alt="logo" />
-               
+
                 <div className="form-group">
                     <input
                         type="text"
@@ -254,7 +254,7 @@ function RegisterPage() {
                 </div>
                 <div className="form-group">
                     <input
-                        style={{ backgroundColor: 'red' }}
+                        style={{ backgroundColor: 'white' }}
                         type="text"
                         id="campus"
                         placeholder="Campus"
@@ -264,7 +264,7 @@ function RegisterPage() {
                 </div>
                 <button onClick={handleSubmit} className="btn btn-primary btn-lg" type="submit">SUBMIT</button>
                 {Object.keys(errors).map((key, index) => (
-                    <p  style={{ color: 'red' }} key={index} className="error-message">{key}: {errors[key].join(', ')}</p>
+                    <p style={{ color: 'red' }} key={index} className="error-message">{key}: {errors[key].join(', ')}</p>
                 ))}
             </form>
         </div>

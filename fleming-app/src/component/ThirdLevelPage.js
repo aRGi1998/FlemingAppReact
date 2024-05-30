@@ -45,6 +45,8 @@ const ThirdLevelPage = () => {
             <div className="levels-page mt-5">
                 <div className="container oval-container mt-5">
                     <>
+                        <p className="scan-header">Take a trip to the College Library, ask the friendly Librarian for the magical QR scanner, and zap the code using the special option.</p>
+                        <p className="scan-header"> Happy zapping!</p>
                         <h1 className="scan-header">SCAN ME</h1>
                         <QrReader
                             delay={500}
@@ -53,7 +55,6 @@ const ThirdLevelPage = () => {
                             style={{ width: '100%' }}
                         />
                         <p>{qrResult}</p>
-                        <p className="scan-header">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </>
                     {/* TASK 7 Container Start Here  */}
                     {buttonId === "TASK 7" && (

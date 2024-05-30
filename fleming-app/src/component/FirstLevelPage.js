@@ -30,15 +30,16 @@ const FirstLevelPage = () => {
 
   // Function to handle submit button click
   const handleSubmit = () => {
+    navigate('/levels');
     // Now, the selected radio button value is stored in the selectedOption state variable
-    console.log('Selected option:', selectedOption);
-    if (selectedOption !== finalAnswer) {
-      // Show an alert message for wrong answer
-      alert('It\'s a wrong answer!');
-    }
-    else {
-      navigate('/levels');
-    }
+    // console.log('Selected option:', selectedOption);
+    // if (selectedOption !== finalAnswer) {
+      
+    //   alert('It\'s a wrong answer!');
+    // }
+    // else {
+    //   navigate('/levels');
+    // }
   };
 
   const handleUpdate = () => {
@@ -69,15 +70,16 @@ const FirstLevelPage = () => {
         <div className="container oval-container mt-5">
           {/* TASK 1 Container Start Here  */}
           <div>
-              <form>
-              <h3>Question: LEVEL 1</h3>
+            <form>
+              <h3>Question: Can you spot where Service Canada is located in Peterborough?</h3>
+              <h4> Choose the correct option from the list below!"</h4>
               <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
                 <div className="rounded-button" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#1ABC9C', borderRadius: '20px', padding: '10px' }}>
                   <input type="radio" name="options" value="A" style={{ marginRight: '5px' }} onChange={handleRadioChange} />
                   A
                 </div>
                 <div className="span" style={{ marginLeft: '10px' }}>
-                  <span>Text</span>
+                  <span>George street</span>
                 </div>
               </div>
               <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
@@ -86,7 +88,7 @@ const FirstLevelPage = () => {
                   B
                 </div>
                 <div className="span" style={{ marginLeft: '10px' }}>
-                  <span>Text</span>
+                  <span>Water Street</span>
                 </div>
               </div>
               <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
@@ -95,7 +97,7 @@ const FirstLevelPage = () => {
                   C
                 </div>
                 <div className="span" style={{ marginLeft: '10px' }}>
-                  <span>Text</span>
+                  <span>Hunter Street</span>
                 </div>
               </div>
               <div className="firstlevel-button" style={{ display: 'flex', alignItems: 'center' }}>
@@ -104,21 +106,21 @@ const FirstLevelPage = () => {
                   D
                 </div>
                 <div className="span" style={{ marginLeft: '10px' }}>
-                  <span>Text</span>
+                  <span>Aylmer Street</span>
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 {isEditable ? (
                   <button onClick={handleUpdate} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Update</button>
                 ) : (
-                  <button onClick={handleSubmit} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Check Your Answer</button>
+                  <button onClick={handleSubmit} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Next</button>
                 )}
               </div>
               {/* <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <button onClick={handleSubmit} className="submit-button" style={{ backgroundColor: '#3498db', color: '#fff', borderRadius: '20px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>Check Your Answer</button>
               </div> */}
-              </form>
-            </div>
+            </form>
+          </div>
           {/* {buttonId === "TASK 1" && (
             <div>
               <form>

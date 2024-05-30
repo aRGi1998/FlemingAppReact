@@ -10,7 +10,7 @@ const SecondLevelPage = () => {
     const buttonId = location.state?.buttonId;
     const navigate = useNavigate();
     const handleSubmit = () => {
-        alert('Are You Finished the Task?');
+        // alert('Are You Finished the Task?');
         navigate('/levels');
     }
     return (
@@ -38,7 +38,9 @@ const SecondLevelPage = () => {
                         <p>Please upload your file containing the answer.</p>
                         <p>Instructions:</p>
                         <ul>
-                            <li>Make sure your file format is compatible.</li>
+                            <li>Head over to Peterborough Terminal and snap a selfie with your lovely face and a bus making a cameo in the background.
+                                <span> Say cheese and buses!</span>
+                            </li>
                             <li>Ensure your answer is clear and concise.</li>
                         </ul>
                     </div>
